@@ -1,0 +1,107 @@
+/**
+ * DELL SonicWALL Modal Dialog styles
+ */
+
+.swlModalDialogBlockUIWrapper {}
+
+.swlModalDialog {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	min-width: 320px;
+	border: 1px solid #aaa;
+	background-color: #fff;
+
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 16px;
+
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	   -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+			box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.swlModalDialog > .title {
+	position: relative;
+	padding: 8px 12px;
+	margin: 0;
+	width: auto;
+	font-weight: bold;
+	background-color: #f0f0f0;
+	border-bottom: 1px solid #e0e0e0;
+}
+.swlModalDialog > .title > .title_tools {
+	position: absolute;
+	z-index: 1000;
+	top: 8px;
+	right: 8px;
+}
+.swlModalDialog > .title > .title_tools a {
+	display: inline-block;
+	font-weight: normal;
+	font-size: 16px;
+	color: #222;
+	opacity: .5;
+	text-decoration: none;
+	cursor: pointer;
+}
+.swlModalDialog > .title > .title_tools a:hover {
+	opacity: 1;
+}
+.swlModalDialog > .title > .title_text {
+	padding: 0;
+}
+
+/**
+ * Icons for various uses of this dialog
+ */
+.swlModalDialog.warning > .title > .title_text,
+.swlModalDialog.question > .title > .title_text {
+	padding-left: 20px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: 16px;
+}
+.swlModalDialog.warning > .title > .title_text {
+	background-image: url(alert_icon.gif);
+}
+.swlModalDialog.question > .title > .title_text {
+	background-image: url(question.gif);
+}
+
+.swlModalDialog > .content {
+	padding: 8px 12px;
+	margin: 0;
+	width: auto;
+	height: auto;
+	min-height: 100px;
+	overflow-x: hidden;
+}
+.swlModalDialog > .content > .content_body {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+}
+
+.swlModalDialog > .action {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	border-top: 1px solid #e0e0e0;
+	overflow: hidden;
+}
+.swlModalDialog > .action > .buttons {
+	float: right;
+	padding: 8px 12px;
+}
+.buttons input[type=button],
+.buttons button {
+	margin-left: 12px;
+}
+.buttons :first-child {
+	margin-left: 0px !important;
+}
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JQuery Modal Dialog Plugin</title>
+<link rel="stylesheet" href="jquery.swlModalDialog.css">
+<script src="jquery-1.11.0.js"></script>
+<script src="jquery.blockUI.js"></script>
+<script src="jquery.swlModalDialog.js"></script>
+<style type="text/css">
+.viewport {
+	margin: 200px 300px;
+}
+
+.examples {
+	margin-top: 40px;
+	overflow: auto;
+}
+.examples .instance {
+	float: left;
+	margin: 20px;
+	position: relative;
+	overflow: visible;
+}
+
+input.size_small, select.size_small {width: 80px !important;}
+
+</style>
+</head>
+<body>
+
+<div class="viewport">
+	<div class="triggers">
+		<input type="button" value="show1" id="trigger1">
+		<input type="button" value="show2" id="trigger2">
+	</div>
+	<div class="examples">
+		<div class="instance">
+			<div class="swlModalDialog warning">
+				<div class="title">
+					<span class="title_text">Modal Dialog Title</span>
+					<div class="title_tools">
+						<a class="swlTitleToolClose">&#10005;</a>
+					</div>
+				</div>
+				<div class="content">
+					<div class="content_body">HTML5 is not based on SGML, and therefore does not require a reference to a DTD.</div>
+				</div>
+				<div class="action">
+					<div class="buttons">
+						<input type="button" class="button size_small swlActionOk" value="OK"><input type="button" class="button size_small swlActionCancel" value="Cancel">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="tempCont" style="display: none;">
+		<p>Test contents</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+		<p>Another paragraph</p>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	$('#trigger1').click(function() {
+		var handle = $.swlModalDialog({
+			title: 'test 1',
+			contents: $('#tempCont'),
+			keepHeightInViewport: true,
+			//usage: 'question',
+			//position: {bottom: '100px', right: '200px'},
+			buttons: ['ok', 'close'],
+			onShown: function() {
+				console.log('on show');
+			},
+			onDestroyed: function() {
+				console.log('on destroy');
+			},
+			beforeClose: function() {
+				console.log('before close');
+			},
+			onAction: function(buttonName) {
+				console.log('on action: '+ buttonName);
+			}
+		});
+
+		setTimeout(function() {
+			//$.swlModalDialogClose(handle);
+		}, 3000);
+	});
+
+	$('#trigger2').click(function() {
+		var handle = $.swlModalDialog({
+			title: 'test 2',
+			contents: $('#tempCont'),
+			keepHeightInViewport: true,
+			usage: 'question',
+			position: {bottom: '100px', right: '200px'},
+			buttons: ['ok', 'close'],
+			onShown: function() {
+				console.log('on show');
+			},
+			onDestroyed: function() {
+				console.log('on destroy');
+			},
+			beforeClose: function() {
+				console.log('before close');
+			},
+			onAction: function(buttonName) {
+				console.log('on action: '+ buttonName);
+			}
+		});
+	});
+
+});
+</script>
+</body>
+</html>
