@@ -60,6 +60,9 @@
 
 		$dialog.attr({id: id});
 
+		/* append class */
+		$dialog.addClass(opts.cls);
+
 		/* setup the usage */
 		if (CONST.usageClasses[opts.usage]) {
 			$dialog.addClass(CONST.usageClasses[opts.usage]);
@@ -270,7 +273,7 @@
 				'</div>' +
 			'</div>',
 		titleToolTemplates: {
-			close: '<a class="swlTitleToolClose">&#10005;</a>'
+			close: '<a class="swlTitleToolClose">&#x2716;</a>'
 		},
 		actionButtonTemplates: {
 			ok: '<input type="button" class="button size_small swlAction swlActionOk" value="OK">',
@@ -332,6 +335,12 @@
 		 * @type {number|string}
 		 */
 		width: 460,
+
+		/**
+		 * Class that will be applied to the top element of this dialog.
+		 * @type {string}
+		 */
+		cls: '',
 
 		/**
 		 * The use of this dialog, possible values are 'generic', 'warning', 'question'.
