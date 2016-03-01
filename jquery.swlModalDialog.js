@@ -3,12 +3,12 @@
  * Version 1.0
  *
  * This plugin depends on blockUI plugin and basically is a wrapper of blockUI for
- * showing dialog with SNWL styles.
+ * showing dialog with specific styles.
  *
  * This requires JQuery version 1.7+, blockUI 2.7+.
  *
  * @author nobelhuang
- * @copyright DELL SonicWALL
+ * @license MIT
  */
 ;(function($) {
 	/**
